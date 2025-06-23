@@ -119,7 +119,7 @@ To integrate MinIO with Java, you can use the **MinIO Java SDK**.
 </dependency>
 ```
 
-### 🔹 Example: Upload a File to MinIO
+### 🔹 Example: Upload a File to MinION
 
 ```java
 import io.minio.MinioClient;  
