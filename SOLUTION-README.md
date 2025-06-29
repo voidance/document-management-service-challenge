@@ -1,6 +1,6 @@
 # Setting up the environment
 
-This project can run as a standalone Spring Boot app, or part of the docker-compose.
+This project can run as a standalone Spring Boot app, or as part of the [docker-compose](docker/docker-compose.yml).
 
 To do life easier for the reviewer the `.env` files have been filled with correct parameters for
 running in `local`. IRL we wouldn't push these changes to the repo. `.env` files would be added to gitignore.
@@ -19,9 +19,11 @@ Run docker compose up:
 docker compose up --build
 ```
 
+This will create all the needed infra and set up the Minio bucket.
+
 Note: You can add the `-d` option to run docker compose detached.
 
-Effect the required configuration:
+Effect the required configuration from the project root directory:
 
 ```
 set -a
@@ -75,7 +77,7 @@ Would have been better to do a JMeter test but no time for now.
 ## Memory requirements
 
 Though the exercise mentioned not using more than 50 mb for the document-management service. After testing various scenarios,
-the least amount of memory I could test the service to run 10 requests in parallel uploading a file of 500 mb each was with. If I use
+the least amount of memory I could test the service to run 10 requests in parallel uploading a file of 500 mb each was with 80mb. If I use
 less, then the service will through OutOfHeap memory error.
 
 ```
@@ -92,7 +94,7 @@ decrease upload parallelism.
 ### Flyway migration
 
 Instead of storing the db schema in the `init-scripts` I introduced Flyway. This way we have the schema changes versioned.
-See the db.migration folder to check the SQL schema.
+See the [db.migration](src/main/resources/db/migration/V1__initial_schema.sql) folder to check the SQL schema.
 
 ### Docker file for document-service-challenge
 

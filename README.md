@@ -156,7 +156,7 @@ Ensure that your solution includes the Dockerfile and database schema script, an
 
 ### Additional Comments 💬
 
-If you have any additional notes, explanations, or assumptions regarding your implementation, feel free to include them in this section. This can help provide more context to reviewers.
+Please read the [SOLUTION-README.md](SOLUTION-README.md)
 
 ---
 
